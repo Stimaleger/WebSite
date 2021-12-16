@@ -1,0 +1,113 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'curriculum/style.css' %}">
+<div id="curriculum">
+    <div class="base">
+    	<div class="border-left">
+    		<div class="inner-border-left">
+    		</div>
+
+			<div class="contact">
+				<div><i class="fa fa-phone fa-lg"></i> <p> 06.19.04.51.30 </p> </div>
+				<div><i class="fas fa-envelope fa-lg"></i> <p> adrien.leger@hotmail.fr </p> </div>
+				<div><i class="fas fa-map-marker-alt fa-lg"></i> <p> France </p> </div>
+				<div><i class="fab fa-github fa-lg"></i> <a href="https://github.com/Stimaleger"> https://github.com/Stimaleger </a> </div>
+			</div>
+
+			<div class="about">
+				<h3> A PROPOS DE MOI </h3>
+				<p>
+					Passionné par les nouvelles technologies,
+					l'électronique, l'informatique et les objets
+					connectés, j'ai développé à travers mes 
+					expériences professionnelles et 
+					personnelles de nombreuses
+					compétences et savoir faire techniques.
+				</p>
+			</div>
+
+			<div class="skills">
+				<h3> COMPETENCES </h3>
+				<p> Python <progress max="100" value="70"></progress> </p>
+				<p> Yocto <progress max="100" value="70"></progress> </p>
+				<p> C++ <progress max="100" value="70"></progress> </p>
+				<p> C <progress max="100" value="70"></progress> </p>
+			</div>
+
+			<div class="hobbies">
+				<h3> HOBBIES </h3>
+				<p> Course à pied </p>
+				<p> Voyages </p>
+				<p> Guitare </p>
+			</div>
+		</div>
+
+    	<div class="photo" style="text-align: center;">
+    		<img src="{% static 'curriculum/photo.png' %}" style='border-radius: 50%; height: 100%; width: 100%'>
+    	</div>
+
+    	<div class="name">
+    		<h1 style="font-weight: bold;"> Adrien LEGER </h1>
+    		<h4 style="font-weight: bold;"> Ingénieur logiciel embarqué </h4>
+    	</div>
+
+    	<div class="experiences">
+    		<h3> EXPERIENCES </h3>
+
+			<div class="div_experience">
+				<i class="fas fa-briefcase fa-3x" style="vertical-align: middle"></i> <h4> STIMIO - Ingénieur linux embarqué </h4>
+				<p class="loc"> Nantes (44) - Juin 2020 - Aujourd'hui </p>
+				<p class="desc"> - Développements, tests & validation linux embarqué sur des produits IOT </p>
+				<p class="desc"> - Chef de projet </p>
+ 				<p class="desc"> - Développement BSP </p>
+			</div>
+
+			<div class="div_experience">
+				<i class="fas fa-briefcase fa-3x" style="vertical-align: middle"></i> <h4> STIMIO - Ingénieur banc de tests </h4>
+				<p class="loc"> Nantes (44) - Novembre 2018 - Juin 2020 </p>
+				<p class="desc"> - Développements des bancs de tests de type lit à clous </p>
+				<p class="desc"> - Développement logiciel de test embarqué </p>
+				<p class="desc"> - Développement applicatif banc de test </p>
+				<p class="desc"> - Développement hardware des cartes banc de test </p>
+				<p class="desc"> - Développement d'outils de production (picking, suivi de production, … ) </p>
+			</div>
+
+			<div class="div_experience">
+				<i class="fas fa-briefcase fa-3x" style="vertical-align: middle"></i> <h4> THALES AVIONICS - Ingénieur banc de tests </h4>
+				<p class="loc"> Châtellerault (86) - Septembre 2018 - Novembre 2018 </p>
+				<p class="desc"> - Développement banc de test pour un calculateur avionique </p>
+				<p class="desc"> - Développement de briques logicielles génériques </p>
+			</div>
+
+			<div class="div_experience">
+				<i class="fas fa-briefcase fa-3x" style="vertical-align: middle"></i> <h4> THALES AVIONICS - Apprenti ingénieur </h4>
+				<p class="loc"> Châtellerault (86) - Septembre 2015 - Août 2018 </p>
+				<p class="desc"> - Développement d'un banc de tests pour centrale inertielle
+				<p class="desc"> - Développement d'un banc de tests de communication SPI basé sur un FPGA Altera </p>
+			</div>
+    	</div>
+    </div>
+</div>
+{% endblock %}
+<!-- Import specific js scripts -->
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	function export_as_pdf() {
+		var opt = {
+			margin:       4,
+			filename: 'myfile.pdf',
+			image: { type: "png" },
+			pagebreak: { mode: "avoid-all" },
+			html2canvas: { scale: 2, dpi: 192, letterRendering: true },
+			jsPDF: { unit: "mm", format: "a4", orientation: 'landscape' }
+		};
+		var element = document.getElementById('curriculum');
+
+		html2pdf().set(opt).from(element).save();
+	}
+</script>
+
+{% endblock %}

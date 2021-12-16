@@ -1,0 +1,155 @@
+body {
+    background-color: #121212;
+}
+
+.base {
+	width: 1080;
+	height: 1080;
+	margin: 0 auto;
+	background: linear-gradient(135deg, #95A4FF 20%, #525C92);
+	border-radius: 10px;
+	padding: 0;
+	position:relative;
+	z-index: -1;
+}
+
+.border-left {
+	filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2));
+	border-bottom-right-radius: 100px;
+	border: none !important;
+}
+
+.inner-border-left {
+	width: 40%;
+	height: 100%;
+	background-color: #95A4FF;
+	margin: 0;
+	padding: 0;
+	border: none !important;
+	/*-webkit-clip-path: polygon(0 0, 100% 0, 70% 25%, 70% 100%,0 100%);*/
+	-webkit-clip-path: polygon(70% 100%, 0 100%, 0 0, 100% 0%, 70% 30%);
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	position: relative;
+}
+
+.border-left h3 {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.photo {
+	position: absolute;
+	border-radius: 50%;
+	height: 180px;
+	width: 180px;
+	border-width: 10px;
+	right: 57%;
+	top: 5%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(3px 3px 6px #525C92);
+}
+
+.name {
+	background-color: rgba(82, 92, 146, 0.5);
+	box-shadow: 0px 8px 8px #525C92;
+	height: 100px;
+	width: 350px;
+	right: 0px;
+	top: 100px;
+    position: absolute;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 20px;
+}
+
+.contact {
+	left: 10px;
+	top: 32px;
+	position: absolute;
+}
+
+.contact div {
+    margin: 12;
+}
+
+.contact p {
+	display: inline-block;
+	font-size: 1.2em;
+	padding-left: 10px;
+}
+
+.about {
+	position: absolute;
+	top: 280px;
+	left: 25px;
+}
+
+.about p {
+	width: 25%;
+	font-size: 0.9em;
+	text-justify: inter-word;
+}
+
+.skills {
+	position: absolute;
+	top: 480px;
+	left: 25px;
+}
+
+.skills p {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.skills progress {
+    vertical-align: middle;
+}
+
+.hobbies {
+	position: absolute;
+	top: 750px;
+	left: 25px;
+}
+
+.experiences {
+	position: absolute;
+	top: 280px;
+	left: 350px;
+}
+
+.experiences h3 {
+	font-weight: bold;
+	margin-top: 30px;
+	margin-bottom: 35px;
+
+}
+
+.experiences h4 {
+	display: inline-block;
+	padding-left: 10px;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+.loc {
+	margin-top: 0;
+	margin-left: 65px;
+	font-size: 18px;
+	margin-bottom: 0px;
+}
+
+.desc {
+	margin-left: 65px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 15px;
+}
+
+.div_experience {
+	margin-bottom: 35px;
+}
